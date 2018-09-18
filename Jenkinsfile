@@ -13,7 +13,7 @@ node {
     stage ('TerraformActivity') {
     	echo " - - - - Ready to execute Terraform now - - - - "
 	sh '''
-	cd TF
+	cd TF/RGROUP
 	 export VAULT_ADDR='http://127.0.0.1:8200'
 	 export VAULT_TOKEN="80b097e3-ca1a-b713-2328-70da1e8562cc"
 	 export ARM_SUBSCRIPTION_ID="`/opt/apps/vault kv get -field="subs_id" secret/wrtazr`"
@@ -24,10 +24,10 @@ node {
 	 /opt/apps/vault --version
 	 /opt/apps/vault kv get -field="foo" secret/hello
 		
-	 echo `./terraform --version`
-	 ./terraform init
-	 echo "yes" | ./terraform plan
-	 echo "yes" | ./terraform apply -var "adminPassword=Thankyou@1"
+	 echo `/opt/apps/terraform --version`
+	 /opt/apps/terraform init
+	 echo "yes" | /opt/apps/terraform plan
+	 echo "yes" | /opt/apps/terraform apply -var "adminPassword=Thankyou@1"
 	 
 	 echo " - - - - - - C O M P L E T E D - - - - - - - "
 
