@@ -15,7 +15,7 @@ node {
 	sh '''
 	cd TF/RGROUP
 	 export VAULT_ADDR='http://127.0.0.1:8200'
-	 export VAULT_TOKEN="80b097e3-ca1a-b713-2328-70da1e8562cc"
+	 export VAULT_TOKEN="6010297d-a651-e303-5e46-07fc2153f484"
 	 export ARM_SUBSCRIPTION_ID="`/opt/apps/vault kv get -field="subs_id" secret/wrtazr`"
 	 export ARM_CLIENT_ID="`/opt/apps/vault kv get -field="client_id" secret/wrtazr`"
 	 export ARM_CLIENT_SECRET="`/opt/apps/vault kv get -field="client_secret" secret/wrtazr`"
