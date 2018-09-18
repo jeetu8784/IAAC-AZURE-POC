@@ -6,5 +6,5 @@ resource "azurerm_resource_group" "main" {
   location = "${var.location}"
 }
 output "ResourceGroup-ID" {
-  value = "${data.azurerm_resource_group_name.main.id}"
+  value = "${resource.azurerm_resource_group.main.id}"
 }
