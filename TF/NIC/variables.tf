@@ -53,6 +53,11 @@ variable "subnetName" {
   default     = "default"
 }
 
+variable "defaultsubnetid" {
+  description = "Subnet ID."
+  default     = "/subscriptions/63c6d21a-fbd9-4681-aa4a-a9d5f7fbed78/resourceGroups/AZURE-POC-TF/providers/Microsoft.Network/virtualNetworks/AZURE-POC-TF1-vnet/subnets/default"
+  }
+
 variable "subnetPrefix" {
   description = "The address prefix to use for the subnet."
   default     = "12.0.0.0/24"
