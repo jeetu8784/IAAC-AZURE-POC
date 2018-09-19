@@ -3,7 +3,7 @@ provider "azurerm" { }
 resource "azurerm_network_security_group" "sshnsg" {
   name                = "${var.networkSecurityGroupName}"
   location            = "${var.location}"
-  resource_group_name = "${var.resource_group.name}"
+  resource_group_name = "${var.resource_group}"
   security_rule {
     name                       = "allow_SSH"
     description                = "Allow SSH access"
@@ -20,7 +20,7 @@ resource "azurerm_network_security_group" "sshnsg" {
 resource "azurerm_network_security_group" "httpnsg" {
   name                = "${var.httpnetworkSecurityGroupName}"
   location            = "${var.location}"
-  resource_group_name = "${var.resource_group.name}"
+  resource_group_name = "${var.resource_group}"
   security_rule {
     name                       = "allow_HTTP"
     description                = "Allow HTTP access"
