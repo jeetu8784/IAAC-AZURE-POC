@@ -7,7 +7,7 @@ resource "azurerm_network_interface" "main" {
   resource_group_name       = "${var.resource_group}"
   
   ip_configuration {
-    name                          = "ipconfig-new"
+    name                          = "ipconfig"
     subnet_id                     = "${var.defaultsubnetid}"
     private_ip_address_allocation = "dynamic"
   }
