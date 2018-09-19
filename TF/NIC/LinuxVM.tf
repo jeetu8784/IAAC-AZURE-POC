@@ -1,7 +1,7 @@
 provider "azurerm" { }
 
 data "azurerm_resource_group" "main" {
-  name                      = "${var.networkSecurityGroupName}"
+  name                      = "${var.resource_group}"
   }
 data "azurerm_network_security_group" "main" {
   name                      = "${var.networkSecurityGroupName}"
@@ -10,7 +10,7 @@ data "azurerm_subnet" "main" {
   name                      = "${var.subnetName}"
   }
 data "azurerm_public_ip" "main" {
-  name                      = "${var.networkSecurityGroupName}"
+  name                      = "${var.publicIpAddressName}"
   }
 # Create a network interface for VMs and attach the PIP and the NSG
 resource "azurerm_network_interface" "main" {
