@@ -63,6 +63,10 @@ variable "publicIpAddressName" {
   default     = "AZURE-POC-TF-ip"
 }
 
+variable "publicIpAddressNameNew" {
+  description = "The name of public ip resource."
+  default     = "AZURE-POC-TF-ip-new"
+}
 variable "publicIpAddressType" {
   default     = "Dynamic"
 }
