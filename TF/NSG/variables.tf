@@ -35,7 +35,12 @@ variable "networkInterfaceName" {
 
 variable "networkSecurityGroupName" {
   description = "Name for the network security group resource."
-  default     = "AZURE-POC-TF-nsg"
+  default     = "AZURE-POC-TF-SSH-nsg"
+}
+
+variable "httpnetworkSecurityGroupName" {
+  description = "Name for the network security group resource for HTTP requests"
+  default = "AZURE-POC-TF-HTTP-nsg"
 }
 
 variable "adminPassword" {
