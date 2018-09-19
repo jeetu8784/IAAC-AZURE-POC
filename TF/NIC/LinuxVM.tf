@@ -2,7 +2,7 @@ provider "azurerm" { }
 
 # Create a network interface for VMs and attach the PIP and the NSG
 resource "azurerm_network_interface" "main" {
-  name                      = "${var.networkInterfaceName}"
+  name                      = "${var.networkInterfaceNameNew}"
   location                  = "${var.location}"
   resource_group_name       = "${var.resource_group}"
   
