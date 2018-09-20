@@ -7,10 +7,10 @@ resource "azurerm_public_ip" "main" {
   resource_group_name          = "${var.resource_group}"
   public_ip_address_allocation = "${var.publicIpAddressType}"
 }
-data "aws_network_interfaces" "main" {}
+data "azurerm_network_interface" "main" {}
 
 output "example" {
-  value = "${data.aws_network_interfaces.main.ids}"
+  value = "${data.azurerm_network_interface.main.ids}"
 }
 output "AzurePublicIP" {
   value = "${azurerm_public_ip.main.ip_address}"
