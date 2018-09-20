@@ -1,5 +1,14 @@
 provider "azurerm" { }
 
+data "azurerm_network_interface" "main" {
+  name                      = "${var.networkInterfaceName}"
+  resource_group_name       = "${var.resource_group}"
+  }
+
+output "example" {
+  value = "${data.azurerm_network_interface.main.id}"
+}
+
 # Create a Public IP for the Virtual Machine
 resource "azurerm_public_ip" "main" {
   name                         = "${var.publicIpAddressName}"
@@ -13,7 +22,7 @@ resource "azurerm_virtual_machine" "vm" {
   name                             = "${var.virtualMachineName}"
   location                         = "${azurerm_public_ip.main.location}"
   resource_group_name              = "${azurerm_public_ip.main.name}"
-  network_interface_ids            = ["${azurerm_network_interface.main.id}"]
+  network_interface_ids            = ["${data.azurerm_network_interface.main.id}"]
   vm_size                          = "${var.virtualMachineSize}"
   delete_os_disk_on_termination    = true
 
