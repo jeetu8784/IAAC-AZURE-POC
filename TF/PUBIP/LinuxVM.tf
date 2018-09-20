@@ -9,9 +9,8 @@ resource "azurerm_public_ip" "main" {
 }
 data "azurerm_network_interface" "main" {
   name                      = "${var.networkInterfaceName}"
-  location                  = "${var.location}"
-  resource_group_name = "${var.resource_group}"
-}
+  resource_group_name       = "${var.resource_group}"
+  }
 
 output "example" {
   value = "${data.azurerm_network_interface.main.ids}"
