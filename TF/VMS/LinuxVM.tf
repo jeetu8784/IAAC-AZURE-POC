@@ -21,7 +21,7 @@ resource "azurerm_public_ip" "main" {
 resource "azurerm_virtual_machine" "vm" {
   name                             = "${var.virtualMachineName}"
   location                         = "${azurerm_public_ip.main.location}"
-  resource_group_name              = "${azurerm_public_ip.main.name}"
+  resource_group_name              = "${azurerm_public_ip.main.resource_group_name}"
   network_interface_ids            = ["${data.azurerm_network_interface.main.id}"]
   vm_size                          = "${var.virtualMachineSize}"
   delete_os_disk_on_termination    = true
