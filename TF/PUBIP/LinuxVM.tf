@@ -12,10 +12,14 @@ output "example" {
 
 # Create a Public IP for the Virtual Machine
 resource "azurerm_public_ip" "main" {
-  name                         = "${data.azurerm_network_interface.main.id}"
+  name                         = "ABCD"
   location                     = "${var.location}"
   resource_group_name          = "${var.resource_group}"
   public_ip_address_allocation = "${var.publicIpAddressType}"
+  
+  tags{
+    environment = "${data.azurerm_network_interface.main.id}"
+    }
 }
 
 output "AzurePublicIP" {
