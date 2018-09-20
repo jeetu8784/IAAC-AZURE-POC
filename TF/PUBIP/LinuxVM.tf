@@ -8,6 +8,8 @@ resource "azurerm_public_ip" "main" {
   public_ip_address_allocation = "${var.publicIpAddressType}"
 }
 data "azurerm_network_interface" "main" {
+  name                      = "${var.networkInterfaceNameNew}"
+  location                  = "${var.location}"
   resource_group_name = "${var.resource_group}"
 }
 
