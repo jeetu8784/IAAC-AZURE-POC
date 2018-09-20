@@ -57,4 +57,8 @@ data "azurerm_public_ip" "main" {
   resource_group_name = "${azurerm_virtual_machine.vm.resource_group_name}"
 }
 
+output "PublicIP" {
+  value = "${data.azurerm_public_ip.main.name}"
+}
+
 
