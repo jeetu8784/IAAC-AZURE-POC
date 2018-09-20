@@ -5,10 +5,6 @@ data "azurerm_network_interface" "main" {
   resource_group_name       = "${var.resource_group}"
   }
 
-output "example" {
-  value = "${data.azurerm_network_interface.main.id}"
-}
-
 # Create a Public IP for the Virtual Machine
 resource "azurerm_public_ip" "main" {
   name                         = "${var.publicIpAddressName}"
@@ -60,5 +56,3 @@ data "azurerm_public_ip" "main" {
 output "PublicIP" {
   value = "${data.azurerm_public_ip.main.name}"
 }
-
-
