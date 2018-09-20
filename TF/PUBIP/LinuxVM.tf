@@ -13,7 +13,7 @@ data "azurerm_network_interface" "main" {
   }
 
 output "example" {
-  value = "${data.azurerm_network_interface.main.ids}"
+  value = "${data.azurerm_network_interface.main.id}"
 }
 output "AzurePublicIP" {
   value = "${azurerm_public_ip.main.ip_address}"
