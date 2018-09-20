@@ -7,7 +7,9 @@ resource "azurerm_public_ip" "main" {
   resource_group_name          = "${var.resource_group}"
   public_ip_address_allocation = "${var.publicIpAddressType}"
 }
-data "azurerm_network_interface" "main" {}
+data "azurerm_network_interface" "main" {
+  resource_group_name = "${var.resource_group}"
+}
 
 output "example" {
   value = "${data.azurerm_network_interface.main.ids}"
