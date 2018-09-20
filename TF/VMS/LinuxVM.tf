@@ -54,5 +54,5 @@ data "azurerm_public_ip" "main" {
 }
 
 output "PublicIP" {
-  value = "${data.azurerm_public_ip.main.name}"
+  value = "${data.azurerm_public_ip.main.ip_address}"
 }
