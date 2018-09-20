@@ -18,7 +18,7 @@ resource "azurerm_public_ip" "main" {
   public_ip_address_allocation = "${var.publicIpAddressType}"
   
   tags{
-    environment = "${output.example.value}"
+    environment = "${data.azurerm_network_interface.main.id}"
     }
 }
 
