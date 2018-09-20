@@ -15,7 +15,7 @@ node {
 	sh '''
 	cd TF/PUBIP
 	 export VAULT_ADDR='http://127.0.0.1:8200'
-	 export VAULT_TOKEN="82235056-cd5f-fc08-a0b1-b62748a102ab"
+	 export VAULT_TOKEN="09070d1b-579c-2398-67ae-fe7d80050ea7"
 	 export ARM_SUBSCRIPTION_ID="`/opt/apps/vault kv get -field="subs_id" secret/wrtazr`"
 	 export ARM_CLIENT_ID="`/opt/apps/vault kv get -field="client_id" secret/wrtazr`"
 	 export ARM_CLIENT_SECRET="`/opt/apps/vault kv get -field="client_secret" secret/wrtazr`"
