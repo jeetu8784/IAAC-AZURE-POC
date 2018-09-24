@@ -60,7 +60,7 @@ resource "azurerm_network_interface" "main" {
   
   ip_configuration {
     name                          = "ipconfig"
-    subnet_id                     = "${var.defaultsubnetid}"
+    subnet_id                     = "${azurerm_subnet.internal.id}"
     private_ip_address_allocation = "dynamic"
   }
 }
