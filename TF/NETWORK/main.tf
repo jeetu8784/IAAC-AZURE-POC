@@ -51,6 +51,14 @@ output "TFPOCNSG-ID" {
   value = "${azurerm_network_security_group.tfpocnsg.id}"
 }
 
+# Create a Public IP for the Virtual Machine
+resource "azurerm_public_ip" "main" {
+  name                         = "${var.publicIpAddressName}"
+  location                     = "${var.location}"
+  resource_group_name          = "${var.resource_group}"
+  public_ip_address_allocation = "${var.publicIpAddressType}"
+}
+
 # Create a network interface for VMs and attach the PIP and the NSG
 resource "azurerm_network_interface" "main" {
   name                      = "${var.networkInterfaceNameNew}"
@@ -68,3 +76,7 @@ resource "azurerm_network_interface" "main" {
 output "NIC-ID" {
   value = "${azurerm_network_interface.main.id}"
 }
+
+out "PUBLIC-IPS" {
+  value = "${azurerm_public_ip.main.ip_address}"
+  }
