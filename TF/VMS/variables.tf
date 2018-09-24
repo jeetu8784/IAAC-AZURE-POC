@@ -10,7 +10,7 @@ variable "location" {
 
 variable "virtualMachineName" {
   description = "VM name referenced also in storage-related names."
-  default     = "AZURE-POC-TF"
+  default     = "AZURE-POC-TF1"
 }
 
 variable "virtualMachineSize" {
