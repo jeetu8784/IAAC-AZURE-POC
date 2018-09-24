@@ -48,11 +48,11 @@ resource "azurerm_virtual_machine" "vm" {
   }
 }
 
-data "azurerm_public_ip" "main" {
+data "azurerm_public_ip" "NewIp" {
   name                = "${azurerm_public_ip.main.name}"
   resource_group_name = "${azurerm_virtual_machine.vm.resource_group_name}"
 }
 
 output "PublicIP" {
-  value = "${data.azurerm_public_ip.main.ip_address}"
+  value = "${data.azurerm_public_ip.newIp.ip_address}"
 }
