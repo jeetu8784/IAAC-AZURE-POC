@@ -12,7 +12,7 @@ output "example" {
 
 # Create a Public IP for the Virtual Machine
 resource "azurerm_public_ip" "main" {
-  name                         = "${var.publicIpAddressName}"
+  name                         = "HIJK"
   location                     = "${var.location}"
   resource_group_name          = "${var.resource_group}"
   public_ip_address_allocation = "${var.publicIpAddressType}"
