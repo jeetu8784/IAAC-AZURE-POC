@@ -22,6 +22,11 @@ resource "azurerm_public_ip" "main" {
     }
 }
 
+data "azurerm_public_ip" "newmain"{
+  name = "${azurerm_public_ip.main.name}"
+  resource_group_name          = "${var.resource_group}"
+  }
+
 output "AzurePublicIP" {
-  value = "${azurerm_public_ip.main.ip_address}"
+  value = "${data.azurerm_public_ip.newmain.ip_address}"
 }
