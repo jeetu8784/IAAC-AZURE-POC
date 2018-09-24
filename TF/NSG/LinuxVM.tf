@@ -30,6 +30,6 @@ resource "azurerm_network_security_group" "sshnsg" {
   }
 }
 output "HTTPNSG-ID" {
-  value = "${azurerm_network_security_group.httpnsg.id}"
+  value = "${azurerm_network_security_group.sshnsg.id}"
 }
 
