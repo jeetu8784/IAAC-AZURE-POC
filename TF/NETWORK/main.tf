@@ -77,6 +77,6 @@ output "NIC-ID" {
   value = "${azurerm_network_interface.main.id}"
 }
 
-out "PUBLIC-IPS" {
+output "PUBLIC-IPS" {
   value = "${azurerm_public_ip.main.ip_address}"
   }
