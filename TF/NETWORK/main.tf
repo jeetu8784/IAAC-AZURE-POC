@@ -53,7 +53,7 @@ output "TFPOCNSG-ID" {
 
 # Create a network interface for VMs and attach the PIP and the NSG
 resource "azurerm_network_interface" "main" {
-  name                      = "${var.networkInterfaceNameNew}"
+  name                      = "${var.networkInterfaceName}"
   location                  = "${var.location}"
   resource_group_name       = "${var.resource_group}"
   network_security_group_id = "${azurerm_network_security_group.tfpocnsg.id}"
