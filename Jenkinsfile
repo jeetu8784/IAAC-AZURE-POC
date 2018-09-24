@@ -13,7 +13,7 @@ node {
     stage ('TerraformActivity') {
     	echo " - - - - Ready to execute Terraform now - - - - "
 	sh '''
-	cd TF/PUBIP
+	cd TF/NETWORK
 	 export VAULT_ADDR='http://127.0.0.1:8200'
 	 export VAULT_TOKEN="099ee9ce-68b5-53ed-21d5-c1d7b27c58f3"
 	 export ARM_SUBSCRIPTION_ID="`/opt/apps/vault kv get -field="subs_id" secret/wrtazr`"
