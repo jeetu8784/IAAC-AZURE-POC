@@ -1,26 +1,11 @@
 variable "resource_group" {
   description = "The name of the resource group in which to create the virtual network."
-  default     = "AZURE-POC-TF"
+  default     = "AZURE-POC-TF1"
 }
 
 variable "location" {
   description = "The location/region where the virtual network is created. Changing this forces a new resource to be created."
   default     = "eastus"
-}
-
-variable "virtualMachineName" {
-  description = "VM name referenced also in storage-related names."
-  default     = "AZURE-POC-TF"
-}
-
-variable "virtualMachineSize" {
-  description = "Specifies the size of the virtual machine."
-  default     = "Standard_B1s"
-}
-
-variable "adminUsername" {
-  description = "Administrator user name."
-  default     = "azure-poc-admin"
 }
 
 variable "virtualNetworkName" {
@@ -56,11 +41,6 @@ variable "subnetName" {
   description = "Subnet resource name."
   default     = "default"
 }
-
-variable "defaultsubnetid" {
-  description = "Subnet ID."
-  default     = "/subscriptions/63c6d21a-fbd9-4681-aa4a-a9d5f7fbed78/resourceGroups/AZURE-POC-TF/providers/Microsoft.Network/virtualNetworks/AZURE-POC-TF1-vnet/subnets/default"
-  }
 
 variable "subnetPrefix" {
   description = "The address prefix to use for the subnet."
