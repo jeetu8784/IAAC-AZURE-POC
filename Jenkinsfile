@@ -15,7 +15,7 @@ node {
 	sh '''
 	cd TF/NSG
 	 export VAULT_ADDR='http://127.0.0.1:8200'
-	 export VAULT_TOKEN="09070d1b-579c-2398-67ae-fe7d80050ea7"
+	 export VAULT_TOKEN="099ee9ce-68b5-53ed-21d5-c1d7b27c58f3"
 	 export ARM_SUBSCRIPTION_ID="`/opt/apps/vault kv get -field="subs_id" secret/wrtazr`"
 	 export ARM_CLIENT_ID="`/opt/apps/vault kv get -field="client_id" secret/wrtazr`"
 	 export ARM_CLIENT_SECRET="`/opt/apps/vault kv get -field="client_secret" secret/wrtazr`"
