@@ -67,7 +67,7 @@ resource "azurerm_network_interface" "main" {
   network_security_group_id = "${azurerm_network_security_group.tfpocnsg.id}"
   
   ip_configuration {
-    name                          = "ipconfig"
+    name                          = "ipconfig-a"
     subnet_id                     = "${azurerm_subnet.internal.id}"
     private_ip_address_allocation = "dynamic"
   }
