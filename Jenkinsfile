@@ -20,7 +20,7 @@ node {
     stage ('TerraformActivity') {
     	echo " - - - - Ready to execute Terraform now - - - - "
 	sh '''
-	cd TF/VMS
+	cd TF/NETWORK
 	
 	echo `/opt/apps/terraform --version`
 	/opt/apps/terraform init
