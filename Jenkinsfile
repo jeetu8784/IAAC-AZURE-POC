@@ -8,6 +8,7 @@ node {
 
     stage ('setupenv') {
     	echo " - - - - Setting up environment now - - - - "
+	    sh '''
 	    
 	 export VAULT_ADDR='http://127.0.0.1:8200'
 	 export VAULT_TOKEN="099ee9ce-68b5-53ed-21d5-c1d7b27c58f3"
@@ -15,6 +16,8 @@ node {
 	 export ARM_CLIENT_ID="`/opt/apps/vault kv get -field="client_id" secret/wrtazr`"
 	 export ARM_CLIENT_SECRET="`/opt/apps/vault kv get -field="client_secret" secret/wrtazr`"
 	 export ARM_TENANT_ID="`/opt/apps/vault kv get -field="tenant_id" secret/wrtazr`"
+	 
+	 '''
     }
 
     stage ('TerraformActivity') {
