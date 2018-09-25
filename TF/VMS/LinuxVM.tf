@@ -5,14 +5,6 @@ data "azurerm_network_interface" "main" {
   resource_group_name       = "${var.resource_group}"
   }
 
-# Create a Public IP for the Virtual Machine
-resource "azurerm_public_ip" "main" {
-  name                         = "${var.publicIpAddressName}"
-  location                     = "${var.location}"
-  resource_group_name          = "${var.resource_group}"
-  public_ip_address_allocation = "${var.publicIpAddressType}"
-}
-
 # Create a new Virtual Machine based on the Golden Image
 resource "azurerm_virtual_machine" "vm" {
   name                             = "${var.virtualMachineName}"
@@ -46,8 +38,4 @@ resource "azurerm_virtual_machine" "vm" {
   os_profile_linux_config {
     disable_password_authentication = false
   }
-}
-
-output "PublicIP" {
-  value = "${azurerm_public_ip.main.name}"
 }
