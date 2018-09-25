@@ -33,11 +33,6 @@ variable "networkInterfaceName" {
   default     = "azure-poc-tf-nic"
 }
 
-variable "networkInterfaceNameNew" {
-  description = "Name of network interface resource."
-  default     = "azure-poc-tf-nic-new"
-}
-
 variable "networkSecurityGroupName" {
   description = "Name for the network security group resource."
   default     = "AZURE-POC-TF-nsg"
