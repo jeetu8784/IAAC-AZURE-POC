@@ -61,13 +61,13 @@ resource "azurerm_public_ip" "main" {
 
 # Create a network interface for VMs and attach the PIP and the NSG
 resource "azurerm_network_interface" "main" {
-  name                      = "${var.networkInterfaceNameNew}"
+  name                      = "${var.networkInterfaceName}"
   location                  = "${var.location}"
   resource_group_name       = "${var.resource_group}"
   network_security_group_id = "${azurerm_network_security_group.tfpocnsg.id}"
   
   ip_configuration {
-    name                          = "ipconfig-a"
+    name                          = "ipconfig"
     subnet_id                     = "${azurerm_subnet.internal.id}"
     private_ip_address_allocation = "dynamic"
   }
@@ -76,7 +76,3 @@ resource "azurerm_network_interface" "main" {
 output "NIC-ID" {
   value = "${azurerm_network_interface.main.id}"
 }
-
-output "PUBLIC-IPS" {
-  value = "${azurerm_public_ip.main.ip_address}"
-  }
