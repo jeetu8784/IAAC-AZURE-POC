@@ -70,9 +70,13 @@ resource "azurerm_network_interface" "main" {
     name                          = "ipconfig"
     subnet_id                     = "${azurerm_subnet.internal.id}"
     private_ip_address_allocation = "dynamic"
+    public_ip_address_id          = "${azurerm_public_ip.main.id}"
   }
 }
 
 output "NIC-ID" {
   value = "${azurerm_network_interface.main.id}"
+}
+output "VM-PUBLIC-IP" {
+  value = "${azurerm_public_ip.main.ip_address}"
 }
