@@ -16,6 +16,14 @@ resource "azurerm_subnet" "internal" {
   address_prefix       = "${var.subnetPrefix}"
 }
 
+# Create a Public IP for the Virtual Machine
+resource "azurerm_public_ip" "main" {
+  name                         = "${var.publicIpAddressName}"
+  location                     = "${var.location}"
+  resource_group_name          = "${var.resource_group}"
+  public_ip_address_allocation = "${var.publicIpAddressType}"
+}
+
 # Create a Network Security Group with some rules
 resource "azurerm_network_security_group" "tfpocnsg" {
   name                = "${var.networkSecurityGroupName}"
@@ -49,14 +57,6 @@ resource "azurerm_network_security_group" "tfpocnsg" {
 }
 output "TFPOCNSG-ID" {
   value = "${azurerm_network_security_group.tfpocnsg.id}"
-}
-
-# Create a Public IP for the Virtual Machine
-resource "azurerm_public_ip" "main" {
-  name                         = "${var.publicIpAddressName}"
-  location                     = "${var.location}"
-  resource_group_name          = "${var.resource_group}"
-  public_ip_address_allocation = "${var.publicIpAddressType}"
 }
 
 # Create a network interface for VMs and attach the PIP and the NSG
