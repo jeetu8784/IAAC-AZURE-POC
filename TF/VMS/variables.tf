@@ -1,6 +1,6 @@
 variable "resource_group" {
   description = "The name of the resource group in which to create the virtual network."
-  default     = "AZURE-POC-TF1"
+  default     = "AZURE-POC-TF"
 }
 
 variable "location" {
@@ -10,7 +10,7 @@ variable "location" {
 
 variable "virtualMachineName" {
   description = "VM name referenced also in storage-related names."
-  default     = "AZURE-POC-TF1"
+  default     = "AZURE-POC-TF"
 }
 
 variable "virtualMachineSize" {
@@ -65,7 +65,7 @@ variable "subnetPrefix" {
 
 variable "publicIpAddressName" {
   description = "The name of public ip resource."
-  default     = "AZURE-POC-TF-new-ip"
+  default     = "AZURE-POC-TF-ip"
 }
 
 variable "publicIpAddressType" {
