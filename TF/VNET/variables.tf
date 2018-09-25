@@ -25,7 +25,7 @@ variable "adminUsername" {
 
 variable "virtualNetworkName" {
   description = "The name for the virtual network."
-  default     = "AZURE-POC-TF1-vnet"
+  default     = "AZURE-POC-TF-vnet"
 }
 
 variable "networkInterfaceName" {
