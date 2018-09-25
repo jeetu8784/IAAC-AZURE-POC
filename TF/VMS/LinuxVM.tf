@@ -1,7 +1,7 @@
 provider "azurerm" { }
 
 data "azurerm_network_interface" "main" {
-  name                      = "${var.networkInterfaceNameNew}"
+  name                      = "${var.networkInterfaceName}"
   resource_group_name       = "${var.resource_group}"
   }
 
