@@ -8,8 +8,8 @@ data "azurerm_network_interface" "main" {
 # Create a new Virtual Machine based on the Golden Image
 resource "azurerm_virtual_machine" "vm" {
   name                             = "${var.virtualMachineName}"
-  location                         = "${azurerm_public_ip.main.location}"
-  resource_group_name              = "${azurerm_public_ip.main.resource_group_name}"
+  location                         = "${data.azurerm_network_interface.main.location}"
+  resource_group_name              = "${data.azurerm_network_interface.main.resource_group_name}"
   network_interface_ids            = ["${data.azurerm_network_interface.main.id}"]
   vm_size                          = "${var.virtualMachineSize}"
   delete_os_disk_on_termination    = true
