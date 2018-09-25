@@ -65,7 +65,7 @@ variable "subnetPrefix" {
 
 variable "publicIpAddressName" {
   description = "The name of public ip resource."
-  default     = "AZURE-POC-TF-NEW-ip"
+  default     = "AZURE-POC-TF-ip"
 }
 
 variable "publicIpAddressType" {
