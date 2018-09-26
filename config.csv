@@ -3,5 +3,5 @@ Oracle,12c,N,1521,N,N,N,ASPEN,INT,N,N,N
 DB2,11,N,50000,N,N,N,ASPEN,INT,N,N,N
 Oracle,11g,N,1521,N,N,N,Generic,INT,N,N,N
 MS SQL,11,N,1433,N,N,N,ASPEN,INT,N,N,N
-JBOSS,eap-7.0,jboss-eap-7.0.0.zip,8080,N,N,N,ASPEN-DIPOLI,INT,Y,N,BREJBOSSDeployTestDev
-Apache,2,N,80,N,N,N,Generic,INT,N,N,N
+JBOSS,eap-7.0,jboss-eap-7.0.0.zip,8080,N,N,N,ASPEN-DIPOLI,INT,N,N,BREJBOSSDeployTestDev
+nginx,1,N,80,N,Y,N,Generic,DEV,N,N,N
