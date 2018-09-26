@@ -66,3 +66,8 @@ variable "publicIpAddressName" {
 variable "publicIpAddressType" {
   default     = "Dynamic"
 }
+
+variable "OsImageName" {
+  description = "OS Image which as java & server installed"  
+  default     = "centos-golden-image"
+}

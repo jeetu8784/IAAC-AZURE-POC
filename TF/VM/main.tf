@@ -5,6 +5,11 @@ data "azurerm_network_interface" "main" {
   resource_group_name       = "${var.resource_group}"
   }
 
+data "azurerm_image" "os" {
+  name			    = "${var.OsImageName}"
+  resource_group_name	    = "${var.resource_group}"
+  }
+
 # Create a new Virtual Machine based on the Golden Image
 resource "azurerm_virtual_machine" "vm" {
   name                             = "${var.virtualMachineName}"
@@ -15,10 +20,7 @@ resource "azurerm_virtual_machine" "vm" {
   delete_os_disk_on_termination    = true
 
   storage_image_reference {
-    publisher = "OpenLogic"
-    offer     = "CentOS"
-    sku       = "7.3"
-    version   = "latest"
+  id				   = "${data.azurerm_image.os.id}"
   }
 
   storage_os_disk {
@@ -26,7 +28,6 @@ resource "azurerm_virtual_machine" "vm" {
     caching           = "ReadWrite"
     create_option     = "FromImage"
     managed_disk_type = "Standard_LRS"
-    disk_size_gb      = "40"
   }
 
   os_profile {
