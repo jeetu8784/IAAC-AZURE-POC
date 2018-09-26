@@ -40,11 +40,3 @@ resource "azurerm_virtual_machine" "vm" {
     disable_password_authentication = false
   }
 }
-data "azurerm_public_ip" "main" {
-  name                = "${var.publicIpAddressName}"
-  resource_group_name = "${azurerm_virtual_machine.vm.resource_group_name}"
-}
-
-output "PublicIP" {
-  value = "${data.azurerm_public_ip.main.ip_address}"
-}
