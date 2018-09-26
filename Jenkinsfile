@@ -29,8 +29,9 @@ node {
 	Deployment=$(echo "$line" |awk -F "," '{ print $11 }')
 	appName=$(echo "$line" |awk -F "," '{ print $12 }')
 	infra=$(echo "$line" |awk -F "," '{ print $5 }')
-	cd TF/VM
+	
 	if [ "$infra" = "Y" ];then
+		cd TF/VM
 		export VAULT_ADDR='http://127.0.0.1:8200'
 		export VAULT_TOKEN="099ee9ce-68b5-53ed-21d5-c1d7b27c58f3"
 		export ARM_SUBSCRIPTION_ID="`/opt/apps/vault kv get -field="subs_id" secret/wrtazr`"
@@ -46,6 +47,7 @@ node {
 	removeInfra=$(echo "$line" |awk -F "," '{ if ($5=="N") print $10; }')
 	echo "$removeInfra"
 	if [ "$removeInfra" = "Y" ]; then
+		cd TF/VM
 		echo "yes" | /opt/apps/terraform destroy
 	fi
     done
