@@ -45,8 +45,7 @@ node {
 	fi
 	removeInfra=$(echo "$line" |awk -F "," '{ if ($5=="N") print $10; }')
 	echo "$removeInfra"
-	if [ "$removeInfra" -eq "Y" ];
-	then
+	if [ "$removeInfra" = "Y" ]; then
 		echo "yes" | /opt/apps/terraform destroy
 	fi
     done
