@@ -16,7 +16,6 @@ node {
     sh '''
    echo "started" 
     {
-    read
     while read -r line
     do
     	platform=$(echo "$line" |awk -F "," '{ print $1 }')
