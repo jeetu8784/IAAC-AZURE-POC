@@ -48,6 +48,8 @@ node {
 	echo "$removeInfra"
 	if [ "$removeInfra" = "Y" ]; then
 		cd TF/VM
+		echo "yes" | /opt/apps/terraform init
+		echo "yes" | /opt/apps/terraform plan
 		echo "yes" | /opt/apps/terraform destroy
 	fi
     done
