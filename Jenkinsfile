@@ -41,7 +41,7 @@ node {
 	
 	if [ "$infra" = "Y" ];then
 		echo "yes" | /opt/apps/terraform plan
-		echo "yes" | /opt/apps/terraform apply -var "adminPassword=Thankyou@1"
+		echo "yes" | /opt/apps/terraform apply -var "adminPassword=Thankyou@1" -var "virtualMachineName=$platform"
 	fi
 	removeInfra=$(echo "$line" |awk -F "," '{ if ($5=="N") print $10; }')
 	echo "$removeInfra"
