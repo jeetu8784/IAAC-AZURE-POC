@@ -1,4 +1,8 @@
-provider "azurerm" { }
+provider "azurerm" {
+subscription_id = " 10bd7109-7882-47f8-b6e6-a8c123c66305”
+tenant_id       = "189de737-c93a-4f5a-8b68-6f4ca9941912"
+}
+
 
 data "azurerm_network_interface" "main" {
   name                      = "${var.networkInterfaceName}"
